@@ -1,0 +1,223 @@
+html, body {
+	overflow-x: hidden;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+:root {
+	--index: calc(1vw + 1vh);
+}
+body {
+	font-family: sans-serif;
+}
+
+/* header */
+.header {
+	min-height: 100vh;
+	width: 100%;
+	display: grid;
+	grid-template-rows: auto 90%;
+}
+.hotbar {
+	background-color: #141414;
+	display: grid;
+	align-content: center;
+}
+.links {
+	display: flex;
+	justify-content: space-between;
+}
+.link, .link-a {
+	text-decoration: none;
+	list-style-type: none;
+	color: #fff;
+	font-size: clamp(16px, calc(var(--index) *1), 42px);
+	padding: 0 calc(var(--index) *.8);
+	transition: all .3s ease;
+}
+.link-a:hover {
+	color: tomato;
+}
+.link-main {
+	color: tomato;
+}
+.hero-section {
+	display: grid;
+	text-align: center;
+	align-items: center;
+}
+.main-hero-block h1 {
+	font-size: calc(var(--index) *4);
+}
+.main-hero-block p {
+	font-size: clamp(16px, calc(var(--index) *1), 42px); 
+	padding: 0 calc(var(--index) *1);
+}
+.sphere {
+	position: absolute;
+	z-index: -1;
+	overflow: hidden;
+}
+.n1 {
+	right: 0px;
+	width: calc(var(--index) *15);
+	height: calc(var(--index) *15);
+	border-radius: 0 0 0 100%;
+	background-color: #935773;
+}
+.n2 {
+	top: 20%;
+	left: 0px;
+	width: calc(var(--index) *5);
+	height: calc(var(--index) *10);
+	border-radius: 0 100% 100% 0 / 0 50% 50% 0;
+	overflow-y: hidden;
+	background-color: #DBA498;
+}
+.n3 {
+	bottom: 0;
+	right: 20%;
+	width: calc(var(--index) *10);
+	height: calc(var(--index) *5);
+	border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+	overflow-x: hidden;
+	background-color: #EFCDD6;
+}
+
+/* main */
+.main {
+	display: grid;
+	gap: calc(var(--index) *6);
+	margin-bottom: calc(var(--index) *6);
+}
+.main p, .main li, .contacts li {
+	padding: 0 calc(var(--index) *1);
+	text-align: justify;
+}
+.n4 {
+	right: 20%;
+	width: calc(var(--index) *10);
+	height: calc(var(--index) *5);
+	border-radius: 0 0 50% 50% / 0 0 100% 100%;
+	overflow-x: hidden;
+	background-color: #EFCDD6;
+}
+.section-1, .section-3 {
+	width: 50%;
+	display: grid;
+	gap: calc(var(--index) *.3);
+}
+.section-1 h2, .section-2 h1, .section-3 h1 {
+	text-align: center;
+	font-size: clamp(20px, calc(var(--index) *2), 100px);
+}
+.section-1 p, .section-3 p, .contacts li {
+	font-size: clamp(16px, calc(var(--index) *1), 42px);
+	font-family: sans-serif;
+}
+.section-2 {
+	display: grid;
+	justify-content: end;
+	padding: 0 calc(var(--index) *1);
+	text-align: center;
+}
+.slider {
+	margin-top: calc(var(--index) *.6);
+	position: relative;
+	width: calc(var(--index) *30);
+	user-select: none;
+	touch-action: pan-y;
+}
+.slider img {
+	pointer-events: none;
+}
+.slider-list {
+	border-radius: calc(var(--index) *1);
+	width: calc(var(--index) *30);
+	overflow: hidden;
+}
+.slider-list.grab {
+	cursor: grab;
+}
+.slider-list.grabbing{
+  cursor: grabbing;
+}
+.slider-track {
+	display: flex;
+}
+.slide {
+	width: calc(var(--index) *30);
+	flex-shrink: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.gallary-item {
+	width: calc(var(--index) *30);
+}
+.slider-arrow {
+	margin-top: 15px; /* pixels!!! */
+	text-align: center;
+}
+.next,
+.prev { /* pixels!!! */
+	background: none;
+  border: none;
+  margin: 0 10px;
+  font-size: 30px;
+  cursor: pointer;
+}
+.next.disabled,
+.prev.disabled {
+  opacity: .25;
+  pointer-events: none;
+}
+.list {
+	display: grid;
+	gap: calc(var(--index) *.25);
+	margin-top: calc(var(--index) *.5);
+}
+.list-item {
+	font-family: sans-serif;
+}
+
+/* FOOTER */
+.footer h1 {
+	text-align: center;
+	font-size: clamp(16px, calc(var(--index) *1.5), 80px);
+}
+.footer {
+	background-color: #141414;
+	border-radius: calc(var(--index) *1) calc(var(--index) *1) 0 0;
+	color: #fff;
+	padding: calc(var(--index) *1);
+	display: grid;
+	gap: calc(var(--index) *.4);
+}
+.contact {
+	list-style-type: none;
+}
+
+/* MEDIA-ADAPTIVE */
+@media screen and (max-width:480px) {
+	.section-1 {
+		width: 100%;
+	}
+	.section-2 {
+		display: grid;
+		justify-content: center;
+	}
+	.section-3 {
+		width: 100%;
+	}
+	.n4 {
+		display: none;
+	}
+	.n3 {
+		width: calc(var(--index) *10);
+		height: calc(var(--index) *10);
+		border-radius: 50% 50%;
+	}
+}
